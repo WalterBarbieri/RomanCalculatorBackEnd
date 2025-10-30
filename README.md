@@ -5,8 +5,38 @@
 - Range: 1 : 3999
 
 ## Supported Operations
-- Addition
-- Subtraction
+- "add" = Addition
+- "subtract" = Subtraction
+
+## API
+
+POST http://127.0.0.1:5000/api/calculator/convert
+{
+  "value" = int
+}
+
+- Response:
+{ 
+  "roman": str
+  "value": int
+}
+
+POST http://127.0.0.1:5000/api/calculator/operation
+{
+  "value1" = int
+  "value1" = int
+  "operator" = str
+}
+
+- Response:
+{ 
+  "operator": str
+  "result": int
+  "roman_result": str
+  "value1": int
+  "value2": int
+}
+
 
 ## Error Handling
 - Input out of Range => if (0 <= input > 3999):
