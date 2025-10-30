@@ -11,24 +11,28 @@
 ## API
 
 POST http://127.0.0.1:5000/api/calculator/convert
+```json
 {
-  "value" = int
+  "value": int
 }
 
 - Response:
+```json
 { 
   "roman": str
   "value": int
 }
 
 POST http://127.0.0.1:5000/api/calculator/operation
+```json
 {
-  "value1" = int
-  "value1" = int
-  "operator" = str
+  "value1": int
+  "value2": int
+  "operator": str
 }
 
 - Response:
+```json
 { 
   "operator": str
   "result": int
@@ -40,18 +44,21 @@ POST http://127.0.0.1:5000/api/calculator/operation
 
 ## Error Handling
 - Input out of Range => if (0 <= input > 3999):
+```json
 {
   "error": "Input must be between 1 and 3999",
   "code": "INPUT_OUT_OF_RANGE",
   "http_error": 400
 }
 - Result out of Range => if (0 <= result > 3999):
+```json
 {
   "error": "Result must be between 1 and 3999",
   "code": "RESULT_OUT_OF_RANGE",
   "http_error": 422
 }
 - Input not an integer => if (input != integer):
+```json
 {
   "error": "Input must be an integer",
   "code": "INVALID_TYPE",
@@ -59,6 +66,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
 
 }
 - Operator not supported => (operator != "add" || operator != "subtract"):
+```json
 {
   "error": "Operator {operator} not supported",
   "code": "UNSUPPORTED_OPERATOR",
@@ -67,6 +75,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
 }
 
 - Missing input => (input == null):
+```json
 {
   "error": "Input values is missing",
   "code": "MISSING_INPUT",
