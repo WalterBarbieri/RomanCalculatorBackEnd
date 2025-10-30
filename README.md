@@ -24,7 +24,7 @@ POST http://127.0.0.1:5000/api/calculator/convert
 }
 ```
 
-POST http://127.0.0.1:5000/api/calculator/operation
+POST http://127.0.0.1:5000/api/calculator/compute
 ```json
 {
   "value1": 187,
