@@ -1,0 +1,17 @@
+### Convert Single Value
+POST http://127.0.0.1:5000/api/calculator/convert
+Content-Type: application/json
+
+{
+    "value": 5
+}
+
+### Perform Calculation
+POST http://127.0.0.1:5000/api/calculator/operation
+Content-Type: application/json
+
+{
+    "value1": 187,
+    "value2": 213,
+    "operator": "add"
+}
