@@ -11,13 +11,13 @@
 ## Error Handling
 - Input out of Range => if (0 <= input > 3999):
 {
-  "error": "Input number out of range",
-  "code": "OUT_OF_RANGE",
+  "error": "Input must be between 1 and 3999",
+  "code": "INPUT_OUT_OF_RANGE",
   "http_error": 400
 }
 - Result out of Range => if (0 <= result > 3999):
 {
-  "error": "Result out of range",
+  "error": "Result must be between 1 and 3999",
   "code": "RESULT_OUT_OF_RANGE",
   "http_error": 422
 }
@@ -26,4 +26,20 @@
   "error": "Input must be an integer",
   "code": "INVALID_TYPE",
   "http_error": 400
+
+}
+- Operator not supported => (operator != "add" || operator != "subtract"):
+{
+  "error": "Operator {operator} not supported",
+  "code": "UNSUPPORTED_OPERATOR",
+  "http_error": 400
+
+}
+
+- Missing input => (input == null):
+{
+  "error": "Input values is missing",
+  "code": "MISSING_INPUT",
+  "http_error": 400
+
 }
