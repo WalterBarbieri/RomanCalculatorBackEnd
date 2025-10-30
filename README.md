@@ -44,7 +44,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
 ```
 
 ## Error Handling
-- Input out of Range => if (1 < input > 3999):
+- Input out of Range => if input < 1 or input > 3999:
 ```json
 {
   "error": "Input must be between 1 and 3999",
@@ -52,7 +52,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "http_error": 400
 }
 ```
-- Result out of Range => if (1 < result > 3999):
+- Result out of Range => if resul < 1 or result > 3999:
 ```json
 {
   "error": "Result must be between 1 and 3999",
