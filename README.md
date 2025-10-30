@@ -13,15 +13,16 @@
 POST http://127.0.0.1:5000/api/calculator/convert
 ```json
 {
-  "value": int
+  "value": 5
 }
 ```
 - Response:
 ```json
 { 
-  "roman": str
-  "value": int
+  "roman": "V",
+  "value": 5
 }
+```
 
 POST http://127.0.0.1:5000/api/calculator/operation
 ```json
