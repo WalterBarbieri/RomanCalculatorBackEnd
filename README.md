@@ -27,21 +27,21 @@ POST http://127.0.0.1:5000/api/calculator/convert
 POST http://127.0.0.1:5000/api/calculator/operation
 ```json
 {
-  "value1": int
-  "value2": int
-  "operator": str
+  "value1": 187
+  "value2": 213
+  "operator": "add"
 }
-
+```
 - Response:
 ```json
 { 
-  "operator": str
-  "result": int
-  "roman_result": str
-  "value1": int
-  "value2": int
+  "operator": "add",
+  "result": 400,
+  "roman_result": "CD",
+  "value1": 187,
+  "value2": 213
 }
-
+```
 
 ## Error Handling
 - Input out of Range => if (0 <= input > 3999):
@@ -51,6 +51,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "code": "INPUT_OUT_OF_RANGE",
   "http_error": 400
 }
+```
 - Result out of Range => if (0 <= result > 3999):
 ```json
 {
@@ -58,6 +59,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "code": "RESULT_OUT_OF_RANGE",
   "http_error": 422
 }
+```
 - Input not an integer => if (input != integer):
 ```json
 {
@@ -66,6 +68,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "http_error": 400
 
 }
+```
 - Operator not supported => (operator != "add" || operator != "subtract"):
 ```json
 {
@@ -74,7 +77,7 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "http_error": 400
 
 }
-
+```
 - Missing input => (input == null):
 ```json
 {
@@ -83,3 +86,4 @@ POST http://127.0.0.1:5000/api/calculator/operation
   "http_error": 400
 
 }
+```
