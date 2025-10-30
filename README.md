@@ -27,8 +27,8 @@ POST http://127.0.0.1:5000/api/calculator/convert
 POST http://127.0.0.1:5000/api/calculator/operation
 ```json
 {
-  "value1": 187
-  "value2": 213
+  "value1": 187,
+  "value2": 213,
   "operator": "add"
 }
 ```
