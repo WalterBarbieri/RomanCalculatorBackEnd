@@ -44,46 +44,43 @@ POST http://127.0.0.1:5000/api/calculator/compute
 ```
 
 ## Error Handling
-- Input out of Range => if input < 1 or input > 3999:
+
+- HTTP_ERROR: 400
+  - Input out of Range => if input < 1 or input > 3999:
 ```json
 {
   "error": "Input must be between 1 and 3999",
-  "code": "INPUT_OUT_OF_RANGE",
-  "http_error": 400
+  "code": "INPUT_OUT_OF_RANGE"
 }
 ```
-- Result out of Range => if resul < 1 or result > 3999:
+
+  - Input not an integer => if (input != integer):
+```json
+{
+  "error": "Input must be an integer",
+  "code": "INVALID_TYPE"
+}
+```
+  - Operator not supported => (operator != "add" || operator != "subtract"):
+```json
+{
+  "error": "Operator {operator} not supported",
+  "code": "UNSUPPORTED_OPERATOR"
+}
+```
+  - Missing input => (input == null):
+```json
+{
+  "error": "Input values is missing",
+  "code": "MISSING_INPUT"
+}
+```
+- HTTP_ERROR: 422
+  - Result out of Range => if resul < 1 or result > 3999:
 ```json
 {
   "error": "Result must be between 1 and 3999",
   "code": "RESULT_OUT_OF_RANGE",
   "http_error": 422
-}
-```
-- Input not an integer => if (input != integer):
-```json
-{
-  "error": "Input must be an integer",
-  "code": "INVALID_TYPE",
-  "http_error": 400
-
-}
-```
-- Operator not supported => (operator != "add" || operator != "subtract"):
-```json
-{
-  "error": "Operator {operator} not supported",
-  "code": "UNSUPPORTED_OPERATOR",
-  "http_error": 400
-
-}
-```
-- Missing input => (input == null):
-```json
-{
-  "error": "Input values is missing",
-  "code": "MISSING_INPUT",
-  "http_error": 400
-
 }
 ```
