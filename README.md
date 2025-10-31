@@ -53,7 +53,7 @@ POST http://127.0.0.1:5000/api/calculator/compute
   "code": "INPUT_OUT_OF_RANGE"
 }
 ```
-
+- HTTP_ERROR: 400
   - Input not an integer => if (input != integer):
 ```json
 {
@@ -61,6 +61,7 @@ POST http://127.0.0.1:5000/api/calculator/compute
   "code": "INVALID_TYPE"
 }
 ```
+- HTTP_ERROR: 400
   - Operator not supported => (operator != "add" || operator != "subtract"):
 ```json
 {
@@ -68,6 +69,7 @@ POST http://127.0.0.1:5000/api/calculator/compute
   "code": "UNSUPPORTED_OPERATOR"
 }
 ```
+- HTTP_ERROR: 400
   - Missing input => (input == null):
 ```json
 {
