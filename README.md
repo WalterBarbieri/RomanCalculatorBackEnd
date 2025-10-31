@@ -82,7 +82,6 @@ POST http://127.0.0.1:5000/api/calculator/compute
 ```json
 {
   "error": "Result must be between 1 and 3999",
-  "code": "RESULT_OUT_OF_RANGE",
-  "http_error": 422
+  "code": "RESULT_OUT_OF_RANGE"
 }
 ```
